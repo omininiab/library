@@ -1,0 +1,29 @@
+main {
+  flex: 1 0 auto;
+  margin: auto;
+  width: 50%;
+  min-width: 350px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#addBook {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+#readStatus {
+  display: flex;
+  column-gap: 5px;
+}
+
+#addBookButton {
+  width: 100px;
+  background-color: brown;
+  color: white;
+}
