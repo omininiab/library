@@ -11,10 +11,11 @@
     <header class="w3-container">
       <h1>Library</h1>
     </header>
-    <main>
+    <main id="main">
       <form class="w3-container" id="addBook">
         <label for="title"
           >Title<input
+            required
             class="w3-input"
             type="text"
             name="title"
@@ -24,6 +25,7 @@
 
         <label for="author"
           >Author<input
+            required
             class="w3-input"
             type="text"
             name="author"
@@ -37,19 +39,19 @@
             <label for="yes"
               >Yes
               <input
+                required
                 type="radio"
                 id="yes"
                 name="readStatus"
                 value="1"
-              /> </label
-            >
+              />
+            </label>
             <label for="no"
-              >No
-              <input type="radio" id="no" name="readStatus" value="0" /> </label
-            >
+              >No <input type="radio" id="no" name="readStatus" value="0" />
+            </label>
           </div>
         </label>
-        <button id="addBookButton" class="w3-btn">Add Book</button>
+        <button type="submit" id="addBookButton" class="w3-btn">Add Book</button>
       </form>
       <div class="w3-container" id="myBooks"></div>
     </main>
