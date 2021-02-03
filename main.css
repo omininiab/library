@@ -11,6 +11,11 @@ body {
   flex-direction: column;
 }
 
+footer {
+    background-color: brown;
+    color: white;
+}
+
 #addBook {
   display: flex;
   flex-direction: column;
