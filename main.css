@@ -27,3 +27,20 @@ body {
   background-color: brown;
   color: white;
 }
+
+#books {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.book {
+    margin: 5px;
+    width: 125px;
+    height: 200px;
+    padding: 5px;
+    background-color: brown;
+    color: white;
+}
