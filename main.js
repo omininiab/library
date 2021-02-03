@@ -1,4 +1,4 @@
-let myLibrary = [{ title: "Art of war", author: "Sun Tzu", read: false }, { title: "Prisoners of Geography", author: "Tim Marshall", read: true }, { title: "Antisocial", author: "Samuel Ominini", read: false }];
+let myLibrary = [{ title: "Art of war", author: "Sun Tzu", read: false }, { title: "Prisoners of Geography", author: "Tim Marshall", read: true }, { title: "Antisocial", author: "Samuel Ominini", read: false }, { title: "Web Develop", author: "Quincy Larson", read: false }];
 
 class Book {
     constructor(title, author, read) {
