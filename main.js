@@ -1,4 +1,4 @@
-let myLibrary = [{ title: "Art of war", author: "Sun Tzu", read: false }, { title: "Prisoners of Geography", author: "Tim Marshall", read: true }, { title: "Antisocial", author: "Samuel Ominini", read: false }, { title: "Web Develop", author: "Quincy Larson", read: false }];
+let myLibrary = [{ title: "Art of war", author: "Sun Tzu", read: false }, { title: "Prisoners of Geography", author: "Tim Marshall", read: true }, { title: "Antisocial", author: "Samuel Ominini", read: true }, { title: "Web Development", author: "Quincy Larson", read: false }];
 
 class Book {
     constructor(title, author, read) {
@@ -46,20 +46,32 @@ function displayBooks() {
     books.classList.add("w3-container")
     books.id = "books"
 
+
     if (myLibrary.length > 0) {
         myBooks.appendChild(header)
         myBooks.appendChild(books)
 
-
         myLibrary.forEach(function (book) {
             card = document.createElement("div")
-            card.classList.add("w3-card")
+            card.classList.add("w3-card-4")
             card.classList.add("book")
             books.appendChild(card)
             console.log(book)
-            myBook = document.createElement("h3")
+            myBook = document.createElement("p")
+            myBook.classList.add("bookInfo")
+            myBook.classList.add("w3-monospace")
             myBook.innerText = `${book["title"]} by ${book["author"]}`
+            switcher = document.createElement("label")
+            switcher.classList.add("switch")
+            checkbox = document.createElement("input")
+            checkbox.type = "checkbox"
+            checkbox.checked = book["read"]
+            slider = document.createElement("span")
+            slider.classList.add("slider")
+            switcher.appendChild(checkbox)
+            switcher.appendChild(slider)
             card.appendChild(myBook)
+            card.appendChild(switcher)
         })
     } else {
         warning = document.createElement("p")
