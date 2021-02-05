@@ -1,0 +1,25 @@
+{% extends "base.html" %} {%block title%}Login{%endblock%} {%block content%}
+<form action="" class="w3-container" id="sign-up-form" method="post">
+  <h2>Login</h2>
+
+  <label for="email">Email</label>
+  <input
+    class="w3-input w3-border"
+    id="email"
+    name="email"
+    type="email"
+    placeholder="example@email.com"
+  />
+
+  <label for="password">Password</label>
+  <input
+    class="w3-input w3-border"
+    id="password"
+    name="password"
+    type="password"
+    placeholder="Enter Password"
+  />
+
+  <button type="submit" class="w3-button w3-block w3-section">Login</button>
+</form>
+{%endblock%}

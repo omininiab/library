@@ -1,0 +1,48 @@
+{% extends "base.html" %} {%block title%}Sign Up{%endblock%} {%block content%}
+<form action="" class="w3-container" id="sign-up-form" method="post">
+  <h2>Sign Up</h2>
+  <label for="fname">First Name</label>
+  <input class="w3-input w3-border" id="fname" name="fname" type="text" placeholder="Enter First Name"/>
+
+  <label for="lname">Last Name</label>
+  <input class="w3-input w3-border" id="lname" name="lname" type="text"  placeholder="Enter Last Name"/>
+
+  <label for="phone">Phone Number</label>
+  <input
+    class="w3-input w3-border"
+    id="phone"
+    name="phone"
+    type="tel"
+    placeholder="###-###-####"
+  />
+
+  <label for="email">Email</label>
+  <input
+    class="w3-input w3-border"
+    id="email"
+    name="email"
+    type="email"
+    placeholder="example@email.com"
+  />
+
+  <label for="password">Password</label>
+  <input
+    class="w3-input w3-border"
+    id="password"
+    name="password"
+    type="password"
+    placeholder="Enter Password"
+  />
+
+  <label for="passwordConfirm">Confirm Password</label>
+  <input
+    class="w3-input w3-border"
+    id="passwordConfirm"
+    name="passwordConfirm"
+    type="password"
+    placeholder="Confirm Password"
+  />
+
+  <button type="submit" class="w3-button w3-block w3-section">Sign Up</button>
+</form>
+{%endblock%}
