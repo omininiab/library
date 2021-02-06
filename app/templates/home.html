@@ -1,5 +1,57 @@
-{% extends "base.html" %}
-{%block title%}Home{%endblock%}
-{%block content%}
-<h1>Home</h1>
+{% extends "base.html" %} {%block title%}Home{%endblock%} {%block aside%}
+<form method="POST" class="w3-container">
+  <h2>Add Book</h2>
+  <input
+    required
+    class="w3-input w3-border"
+    type="text"
+    name="title"
+    id="title"
+    placeholder="Enter Book Title"
+  />
+  <input
+    required
+    class="w3-input w3-border"
+    type="text"
+    name="author"
+    id="author"
+    placeholder="Author"
+  />
+  <input
+    required
+    class="w3-input w3-border"
+    type="number"
+    name="nPages"
+    id="nPages"
+    min="1"
+    placeholder="Total Number of Pages"
+  />
+  <input
+    required
+    class="w3-input w3-border"
+    type="number"
+    name="pagesRead"
+    id="pagesRead"
+    min="0"
+    placeholder="Number of Pages Read"
+  />
+  <button type="submit" class="w3-button w3-block w3-section">Add Book</button>
+</form>
+{%endblock%} {%block content%}
+<h1>Books</h1>
+<ul class="w3-ul w3-card">
+  {% for book in user.books %}
+  <li class="w3-bar">
+    <span
+      onClick="deleteBook({{ book.id }})"
+      class="w3-bar-item w3-button w3-xlarge w3-right"
+      >&times;</span
+    >
+    <div class="w3-bar-item">
+      <span class="w3-large">{{book.title}}</span><br />
+      <span>{{book.author}}</span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
 {%endblock%}

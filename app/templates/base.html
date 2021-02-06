@@ -5,14 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
     <title>{%block title%}Library{% endblock %}</title>
   </head>
   <body>
-      <nav id="navbar" class="w3-bar">
-          <a class="w3-bar-item w3-button w3-mobile" id="login" href="/login">Login</a>
-          <a class="w3-bar-item w3-button w3-mobile" id="signUp" href="/sign-up">Sign Up</a>
-          <a class="w3-bar-item w3-button w3-mobile" id="logout" href="/logout">Logout</a>
+    <header>
+      <nav>
+        <div id="navbar" class="w3-bar">
+          {% if user.is_authenticated %}
+          <a
+            class="w3-bar-item w3-button w3-mobile w3-hide-small"
+            id="logout"
+            href="/logout"
+            >Logout</a
+          >
+          {% else %}
+          <a
+            class="w3-bar-item w3-button w3-mobile w3-hide-small"
+            id="login"
+            href="/login"
+            >Login</a
+          >
+          <a
+            class="w3-bar-item w3-button w3-mobile w3-hide-small"
+            id="signUp"
+            href="/signup"
+            >Sign Up</a
+          >
+          {%endif%}
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            onclick="myFunction()"
+            >&#9776;</a
+          >
+        </div>
+        <div
+          id="demo"
+          class="w3-bar-block w3-hide w3-hide-large w3-hide-medium"
+        >
+          {% if user.is_authenticated %}
+          <a class="w3-bar-item w3-button w3-mobile" id="logout" href="/logout"
+            >Logout</a
+          >
+          {%else%}
+          <a class="w3-bar-item w3-button w3-mobile" id="login" href="/login"
+            >Login</a
+          >
+          <a class="w3-bar-item w3-button w3-mobile" id="signUp" href="/signup"
+            >Sign Up</a
+          >
+          {%endif%}
+        </div>
       </nav>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="alert w3-panel">
+        {{message}}
+        <span
+          onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-display-topright"
+          >&times;</span
+        >
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </header>
+    <aside>
+      <div class="w3-container">{%block aside%}{%endblock%}</div>
+    </aside>
+    <main>
       <div class="w3-container">{%block content%}{%endblock%}</div>
+    </main>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='main.js') }}"
+    ></script>
   </body>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
 </html>

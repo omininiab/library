@@ -1,14 +1,14 @@
 {% extends "base.html" %} {%block title%}Sign Up{%endblock%} {%block content%}
-<form action="" class="w3-container" id="sign-up-form" method="post">
+<form class="w3-container" id="sign-up-form" method="post">
   <h2>Sign Up</h2>
   <label for="fname">First Name</label>
-  <input class="w3-input w3-border" id="fname" name="fname" type="text" placeholder="Enter First Name"/>
+  <input required class="w3-input w3-border" id="fname" name="fname" type="text" placeholder="Enter First Name"/>
 
   <label for="lname">Last Name</label>
-  <input class="w3-input w3-border" id="lname" name="lname" type="text"  placeholder="Enter Last Name"/>
+  <input required class="w3-input w3-border" id="lname" name="lname" type="text"  placeholder="Enter Last Name"/>
 
   <label for="phone">Phone Number</label>
-  <input
+  <input required
     class="w3-input w3-border"
     id="phone"
     name="phone"
@@ -17,7 +17,7 @@
   />
 
   <label for="email">Email</label>
-  <input
+  <input required
     class="w3-input w3-border"
     id="email"
     name="email"
@@ -26,7 +26,7 @@
   />
 
   <label for="password">Password</label>
-  <input
+  <input required
     class="w3-input w3-border"
     id="password"
     name="password"
@@ -35,7 +35,7 @@
   />
 
   <label for="passwordConfirm">Confirm Password</label>
-  <input
+  <input required
     class="w3-input w3-border"
     id="passwordConfirm"
     name="passwordConfirm"

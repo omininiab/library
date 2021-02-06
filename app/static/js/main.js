@@ -1,3 +1,13 @@
+function deleteBook(bookID) {
+    fetch("/delete-book", {
+        method: "POST",
+        body: JSON.stringify({ bookID: bookID }),
+    }).then((_res) => {
+        window.location.href = "/";
+    });
+}
+
+
 let myLibrary = [{ title: "Art of war", author: "Sun Tzu", read: false }, { title: "Prisoners of Geography", author: "Tim Marshall", read: true }, { title: "Antisocial", author: "Samuel Ominini", read: true }, { title: "Web Development", author: "Quincy Larson", read: false }];
 
 class Book {
