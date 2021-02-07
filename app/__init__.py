@@ -14,6 +14,7 @@ def create_app():
     #replace with virtual environment variable
     app.config['SECRET_KEY'] = "sdoifniodsnfnfoidsnfoisd156161#$%"
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
     from .views import views

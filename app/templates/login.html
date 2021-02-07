@@ -1,9 +1,10 @@
 {% extends "base.html" %} {%block title%}Login{%endblock%} {%block content%}
-<form class="w3-container" id="sign-up-form" method="post">
+<form class="w3-container" id="loginForm" method="post">
   <h2>Login</h2>
 
   <label for="email">Email</label>
-  <input required
+  <input
+    required
     class="w3-input w3-border"
     id="email"
     name="email"
@@ -12,7 +13,8 @@
   />
 
   <label for="password">Password</label>
-  <input required
+  <input
+    required
     class="w3-input w3-border"
     id="password"
     name="password"
@@ -20,6 +22,8 @@
     placeholder="Enter Password"
   />
 
-  <button type="submit" class="w3-button w3-block w3-section">Login</button>
+  <button id="loginButton" type="submit" class="w3-button w3-block w3-section">
+    Login
+  </button>
 </form>
 {%endblock%}

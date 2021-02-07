@@ -6,7 +6,6 @@ import json
 
 views = Blueprint('views', __name__)
 
-
 @views.route('/', methods=['GET', 'POST'])
 @views.route('/home', methods=['GET', 'POST'])
 @login_required
@@ -49,7 +48,7 @@ def delete_book():
     return jsonify({})
 
 def bookVerified(title, author, nPages, pagesRead):
-    if len(title) > 0 and len(author) > 0:
+    if len(title) > 0 and len(author) > 0 and int(nPages)>0 and int(pagesRead)>=0 and int(pagesRead) <= int(nPages):
         return True
     flash('Error occurred while attempting to add book', category='error')
     return False

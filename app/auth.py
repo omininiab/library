@@ -53,7 +53,7 @@ def signup():
                 db.session.rollback()
 
             login_user(user, remember=True)
-            return redirect(url_for('views.home'))
+            return redirect(url_for('auth.login'))
 
     return render_template("signup.html", user=current_user)
 

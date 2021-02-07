@@ -1,4 +1,4 @@
-aside {
+#aside {
   margin: auto;
   width: 50%;
   min-width: 350px;
@@ -17,7 +17,29 @@ body {
   flex-direction: column;
 }
 
-footer {
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+#signupButton {
+  background-color: brown;
+  color: white;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+#loginButton {
+  background-color: brown;
+  color: white;
+}
+
+#addBookModal {
   background-color: brown;
   color: white;
 }
@@ -28,13 +50,7 @@ footer {
   row-gap: 15px;
 }
 
-#readStatus {
-  display: flex;
-  column-gap: 5px;
-}
-
 #addBookButton {
-  width: 100px;
   background-color: brown;
   color: white;
 }
@@ -47,73 +63,6 @@ footer {
   justify-content: flex-end;
 }
 
-.book {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 5px;
-  width: 125px;
-  height: 200px;
-  padding: 5px;
-  background-color: brown;
-  color: white;
-}
-
-.bookInfo {
-  font-size: 85%;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 17px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 2px;
-  bottom: 2px;
-  background-color: brown;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: goldenrod;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px white;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(13px);
-  -ms-transform: translateX(13px);
-  transform: translateX(13px);
+#book {
+  width: 40%;
 }

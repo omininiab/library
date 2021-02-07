@@ -36,7 +36,7 @@
           <a
             href="javascript:void(0)"
             class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-            onclick="myFunction()"
+            onClick="navbar()"
             >&#9776;</a
           >
         </div>
@@ -64,13 +64,13 @@
         {{message}}
         <span
           onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright"
+          class="w3-button"
           >&times;</span
         >
       </div>
       {% endfor %} {% endif %} {% endwith %}
     </header>
-    <aside>
+    <aside id="aside">
       <div class="w3-container">{%block aside%}{%endblock%}</div>
     </aside>
     <main>
@@ -78,18 +78,7 @@
     </main>
     <script
       type="text/javascript"
-      src="{{ url_for('static', filename='main.js') }}"
+      src="{{ url_for('static', filename='js/main.js') }}"
     ></script>
   </body>
-
-  <script>
-    function myFunction() {
-      var x = document.getElementById("demo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-  </script>
 </html>
