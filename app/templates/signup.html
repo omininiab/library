@@ -1,65 +1,76 @@
 {% extends "base.html" %} {%block title%}Sign Up{%endblock%} {%block content%}
 <form class="w3-container" id="signupForm" method="post">
   <h2>Sign Up</h2>
-  <label for="fname">First Name</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="fname"
-    name="fname"
-    type="text"
-    placeholder="Enter First Name"
-  />
+  <div>
+    <label for="fname">First Name</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="fname"
+      name="fname"
+      type="text"
+      placeholder="Enter First Name"
+    />
+  </div>
+  <div>
+    <label for="lname">Last Name</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="lname"
+      name="lname"
+      type="text"
+      placeholder="Enter Last Name"
+    />
+  </div>
 
-  <label for="lname">Last Name</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="lname"
-    name="lname"
-    type="text"
-    placeholder="Enter Last Name"
-  />
+  <div>
+    <label for="phone">Phone Number</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="phone"
+      name="phone"
+      type="tel"
+      placeholder="###-###-####"
+    />
+  </div>
 
-  <label for="phone">Phone Number</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="phone"
-    name="phone"
-    type="tel"
-    placeholder="###-###-####"
-  />
+  <div>
+    <label for="email">Email</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="email"
+      name="email"
+      type="email"
+      placeholder="example@email.com"
+    />
+  </div>
 
-  <label for="email">Email</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="email"
-    name="email"
-    type="email"
-    placeholder="example@email.com"
-  />
+  <div>
+    <label for="password">Password</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="password"
+      name="password"
+      type="password"
+      placeholder="Enter Password"
+    />
+  </div>
 
-  <label for="password">Password</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="password"
-    name="password"
-    type="password"
-    placeholder="Enter Password"
-  />
-
-  <label for="passwordConfirm">Confirm Password</label>
-  <input
-    required
-    class="w3-input w3-border"
-    id="passwordConfirm"
-    name="passwordConfirm"
-    type="password"
-    placeholder="Confirm Password"
-  />
+  <div>
+    <label for="passwordConfirm">Confirm Password</label>
+    <input
+      required
+      class="w3-input w3-border"
+      id="passwordConfirm"
+      name="passwordConfirm"
+      type="password"
+      placeholder="Confirm Password"
+    />
+  </div>
 
   <button id="signupButton" type="submit" class="w3-button w3-block w3-section">
     Sign Up

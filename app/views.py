@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, redirect
 from flask_login import login_required, current_user
 from .models import Book
 from . import db
@@ -17,11 +17,12 @@ def home():
         pagesRead = request.form.get('pagesRead')
 
         if bookVerified(title, author, nPages, pagesRead):
-            new_book = Book(title=title, author=author, nPages=nPages, pagesRead=pagesRead, userid=current_user.id)
+            new_book = Book(title=title[:150].title(), author=author[:150].title(), nPages=int(nPages), pagesRead=int(pagesRead), userid=current_user.id)
             try:
                 db.session.add(new_book)
                 db.session.commit()
                 flash('Book added!', category='success')
+                return redirect(request.url)
             except:
                 db.session.rollback()
                 flash('Error occurred while attempting to add book', category='error')
@@ -51,4 +52,5 @@ def bookVerified(title, author, nPages, pagesRead):
     if len(title) > 0 and len(author) > 0 and int(nPages)>0 and int(pagesRead)>=0 and int(pagesRead) <= int(nPages):
         return True
     flash('Error occurred while attempting to add book', category='error')
+
     return False

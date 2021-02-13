@@ -1,3 +1,15 @@
+:root {
+  font-size: 100%;
+}
+
+#alertMessages {
+  display: flex;
+  flex-direction: row;
+  background: brown;
+  color: white;
+  justify-content: space-between;
+}
+
 #aside {
   margin: auto;
   width: 50%;
@@ -30,8 +42,11 @@ body {
 
 #loginForm {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   row-gap: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 #loginButton {
@@ -59,10 +74,21 @@ body {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  padding-bottom: 10px;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 #book {
-  width: 40%;
+  width: 170px;
+  height: 170px;
+}
+@media screen and (max-width: 380px) {
+  #book {
+    width: 100%;
+  }
+}
+
+#displayProgress {
+  font-size: 9px;
 }

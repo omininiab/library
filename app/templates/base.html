@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../static/css/main.css" />
     <title>{%block title%}Library{% endblock %}</title>
   </head>
@@ -58,17 +62,20 @@
           {%endif%}
         </div>
       </nav>
-      {% with messages = get_flashed_messages() %} {% if messages %} {% for
-      message in messages %}
-      <div class="alert w3-panel">
-        {{message}}
-        <span
-          onclick="this.parentElement.style.display='none'"
-          class="w3-button"
-          >&times;</span
-        >
+      <div class="w3-container">
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for
+        message in messages %}
+        <div id="alertMessages">
+          <span>{{message}}</span>
+          <span
+            aria-hidden="true"
+            onclick="this.parentElement.style.display='none'"
+            class="w3-btn w3-small w3-right"
+            >&times;
+          </span>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
       </div>
-      {% endfor %} {% endif %} {% endwith %}
     </header>
     <aside id="aside">
       <div class="w3-container">{%block aside%}{%endblock%}</div>

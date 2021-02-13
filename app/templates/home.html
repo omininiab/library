@@ -5,7 +5,7 @@
   <button
     id="addBookModal"
     type="button"
-    class="w3-button w3-block w3-section"
+    class="w3-btn w3-block w3-section"
     onclick="document.getElementById('id01').style.display='block'"
   >
     Add new book
@@ -16,8 +16,9 @@
       <div class="w3-center">
         <br />
         <span
+          aria-hidden="true"
           onclick="document.getElementById('id01').style.display='none'"
-          class="w3-button w3-xlarge w3-hover-red w3-display-topright"
+          class="w3-btn w3-display-topright"
           title="Close Modal"
           >&times;</span
         >
@@ -47,6 +48,7 @@
           name="nPages"
           id="nPages"
           min="1"
+          max="9999"
           placeholder="Total Number of Pages"
         />
         <input
@@ -61,7 +63,7 @@
         <button
           id="addBookButton"
           type="submit"
-          class="w3-button w3-block w3-section"
+          class="w3-btn w3-block w3-section"
         >
           Add Book
         </button>
@@ -70,7 +72,7 @@
         <button
           onclick="document.getElementById('id01').style.display='none'"
           type="button"
-          class="w3-button"
+          class="w3-btn"
         >
           Cancel
         </button>
@@ -79,24 +81,25 @@
   </div>
 </div>
 {%endblock%} {%block content%}
-<h1>Books</h1>
-<ul id="books" class="w3-ul w3-card">
+<h2>Books</h2>
+<ul id="books" class="w3-ul">
   {% for book in user.books %}
-  <li id="book" class="w3-bar">
-    <span
-      onClick="deleteBook({{ book.id }})"
+  <li id="book" class="w3-card-4">
+    <p
+      aria-hidden="true"
+      onClick="deleteBook('{{book.id}}')"
       id="{{book.id}}"
-      class="w3-bar-item w3-button w3-xlarge w3-right"
-      >&times;</span
+      class="w3-btn w3-right"
     >
-    <div class="w3-bar-item">
-      <span class="w3-large">{{book.title}}</span><br />
-      <span>{{book.author}}</span><br />
-      <span class="w3-small">{{ book.nPages }} Pages</span>
-      <span> &middot; </span>
-      <span class="w3-small"
-        >{{ (100 * book.pagesRead / book.nPages) | int}}% read</span
-      >
+      &times;
+    </p>
+    <div>
+      <p id="displayTitle">{{book.title}}</p>
+      <p id="displayAuthor"><i>by {{book.author}}</i></p>
+      <p id="displayProgress">
+        {{ book.nPages }} Pages &middot; {{ (100 * book.pagesRead / book.nPages)
+        | int}}% Read
+      </p>
     </div>
   </li>
   {% endfor %}
