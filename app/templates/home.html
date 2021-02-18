@@ -94,8 +94,10 @@
       &times;
     </p>
     <div>
-      <p id="displayTitle">{{book.title}}</p>
-      <p id="displayAuthor"><i>by {{book.author}}</i></p>
+      <a href="/book/{{book.id}}"
+        ><h3 id="displayTitle">{{book.title[:40]}}</h3></a
+      >
+      <p id="displayAuthor"><i>by {{book.author[:30]}}</i></p>
       <p id="displayProgress">
         {{ book.nPages }} Pages &middot; {{ (100 * book.pagesRead / book.nPages)
         | int}}% Read

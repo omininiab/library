@@ -77,18 +77,28 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #book {
   width: 170px;
   height: 170px;
 }
-@media screen and (max-width: 380px) {
+@media (max-width: 340px) {
   #book {
     width: 100%;
   }
 }
 
+#displaytitle {
+  font-size: 20px;
+}
+
+#displayAuthor {
+  font-size: 15px;
+}
+
 #displayProgress {
-  font-size: 9px;
+  font-size: 10px;
 }

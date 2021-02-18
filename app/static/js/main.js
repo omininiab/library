@@ -18,3 +18,6 @@ function deleteBook(bookID) {
     });
 }
 
+function updateBook(bookID) {
+
+}

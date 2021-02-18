@@ -1,0 +1,61 @@
+{% extends "base.html" %} {%block title%}Update Book{%endblock%} {%block
+content%}
+<form id="addBook" class="w3-container" method="POST">
+  <h2>Update Book</h2>
+
+  <div>
+    <label for="title">Title: </label>
+    <input
+      required
+      class="w3-input w3-border"
+      type="text"
+      name="title"
+      id="title"
+      value="{{book.title}}"
+    />
+  </div>
+
+  <div>
+    <label for="author">Author: </label>
+    <input
+      required
+      class="w3-input w3-border"
+      type="text"
+      name="author"
+      id="author"
+      value="{{book.author}}"
+    />
+  </div>
+
+  <div>
+    <label for="nPages">No. of pages: </label>
+    <input
+      required
+      class="w3-input w3-border"
+      type="number"
+      name="nPages"
+      id="nPages"
+      min="1"
+      max="9999"
+      value="{{book.nPages}}"
+    />
+  </div>
+
+  <div>
+    <label for="pagesRead">No. of pages read: </label>
+    <input
+      required
+      class="w3-input w3-border"
+      type="number"
+      name="pagesRead"
+      id="pagesRead"
+      min="0"
+      value="{{book.pagesRead}}"
+    />
+  </div>
+
+  <button id="addBookButton" type="submit" class="w3-btn w3-block w3-section">
+    Update Book
+  </button>
+</form>
+{%endblock%}
